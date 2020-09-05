@@ -26,11 +26,11 @@
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-8 order-md-1">
-          <form class="needs-validation" novalidate="">
+          <form id="PaymentForm" class="needs-validation" novalidate="">
 
 						<div class="mb-3">
 							<label for="address2">Order ID</label>
-							<input type="text" class="form-control" id="order-id" required>
+							<input type="text" class="form-control" id="order-id" name="order-id" required>
 							<div class="invalid-feedback">
 								Order ID is required.
 							</div>
@@ -39,7 +39,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="fname" placeholder="" value="" required>
+                <input type="text" class="form-control" id="fname" placeholder="" name="firstname" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
@@ -47,7 +47,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lname" placeholder="" value="" required="">
+                <input type="text" class="form-control" id="lname" placeholder="" name="lastname" required="">
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -56,7 +56,7 @@
 
 						<div class="mb-3">
 							<label for="address2">Amount</label>
-							<input type="number" class="form-control" id="amount" step="0.01" required>
+							<input type="number" class="form-control" id="amount" step="0.01" name="amount" required>
 							<div class="invalid-feedback">
 								Amount is required.
 							</div>
@@ -67,15 +67,6 @@
           </form>
         </div>
       </div>
-
-      <!-- <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">© 2020 Company Name</p>
-        <ul class="list-inline">
-          <li class="list-inline-item"><a href="#">Privacy</a></li>
-          <li class="list-inline-item"><a href="#">Terms</a></li>
-          <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-      </footer> -->
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -86,6 +77,8 @@
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/payment-request.js"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
@@ -108,27 +101,7 @@
         }, false);
       })();
     </script>
-		<script>
-			$("form").submit(function(e){
-				e.preventDefault();
-
-				// $.ajax({
-				// 	url: base_url+"/Stripe/payment_intent_error",
-				// 	type: "POST",
-				// 	data: {
-				// 					result:result.error,
-				// 				},
-				// 	// dataType: 'json',
-				// 	success: function(response){
-				//
-				// 	},
-				// 	error: function(){
-				//
-				// 	}
-				// });//END:: AJAX
-
-			});
-		</script>
+		
 
 
 </body></html>
