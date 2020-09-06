@@ -8,7 +8,7 @@ $("form").submit(function(e){
     // dataType: 'json',
     data: $("#PaymentForm").serialize(),
     success: function(response){
-         console.log(response)
+         window.location.href = response.redirectUrl;
     },
     error: function(){
 
