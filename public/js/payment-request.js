@@ -1,10 +1,10 @@
 $("form").submit(function(e){
-  // console.log($("#PaymentForm").serialize())
+
   e.preventDefault();
   $(".btn-submit").prop("disabled",true);
-  var base_url = 'http://localhost:8080/'
+  bURL = base_url + '/Paymaya/request_payment';
   $.ajax({
-    url: base_url + 'Paymaya/request_payment',
+    url: bURL,
     type: "POST",
     dataType: 'json',
     data: $("#PaymentForm").serialize(),

@@ -78,6 +78,7 @@
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> let base_url = "<?= base_url(); ?>"</script>
     <script src="<?= base_url('js/payment-request.js?v=').strtotime('now'); ?>"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
