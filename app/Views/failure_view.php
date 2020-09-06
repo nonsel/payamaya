@@ -29,6 +29,7 @@
           <center>
             <img src="<?= base_url('image/error.png') ?>">
             <h1>Payment Failed</h1>
+            <a href="<?= base_url('/') ?>">Return Home</a>
           </center>
         </div>
       </div>

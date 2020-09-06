@@ -29,6 +29,7 @@
           <center>
             <img src="<?= base_url('image/success.png') ?>">
             <h1>Payment Succesfully</h1>
+            <a href="<?= base_url('/') ?>">Return Home</a>
           </center>
         </div>
       </div>
