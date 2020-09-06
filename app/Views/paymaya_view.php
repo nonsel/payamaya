@@ -105,21 +105,3 @@
 
 
 </body></html>
-
-<script src="https://unpkg.com/paymaya-js-sdk@2.0.0/dist/bundle.js"></script>
-<script>
-
-function App() {
-  const exampleCheckoutObject = {};
-  useEffect(() => {
-    paymaya.init('my-public-key', true);
-    paymaya.createCheckout(exampleCheckoutObject);
-  }, []);
-  return (
-      <div>
-        <div>Test App</div>
-      </div>
-  );
-}
-
-</script>
