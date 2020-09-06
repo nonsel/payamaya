@@ -3,9 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="icon" href="<?= base_url('image/favicon.png'); ?>">
 
-    <title>Checkout example for Bootstrap</title>
+    <title>Paymaya</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
@@ -63,7 +63,7 @@
 						</div>
 
             <!-- <hr class="mb-4"> -->
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to Payment</button>
+            <button class="btn btn-primary btn-lg btn-block btn-submit" type="submit">Continue to Payment</button>
           </form>
         </div>
       </div>
@@ -78,7 +78,7 @@
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/payment-request.js"></script>
+    <script src="<?= base_url('js/payment-request.js?v=').strtotime('now'); ?>"></script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
