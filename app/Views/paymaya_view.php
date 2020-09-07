@@ -63,7 +63,7 @@
 							<label for="address2">Amount</label>
 							<input type="number" class="form-control" id="amount" step="0.01" name="amount" max="100000" required>
 							<div class="invalid-feedback">
-								Amount is required.
+								<span class="error-amount"></span>
 							</div>
 						</div>
 
@@ -103,6 +103,13 @@
           // Loop over them and prevent submission
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
+              var amount = document.getElementById("amount");
+              if(amount.validationMessage=="Value must be less than or equal to 100000."){
+                $(".error-amount").text("Maximum of 100,000");
+              }else{
+                $(".error-amount").text("Amount is required");
+              }
+
               // if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();

@@ -1,6 +1,6 @@
 function generateLink(valid){
-  
-  if(valid==false){ return; } console.log(valid);
+
+  if(valid==false){ return; }
 
   $(".btn-submit").prop("disabled",true);
   bURL = base_url + '/Paymaya/request_payment';
