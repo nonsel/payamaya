@@ -1,6 +1,7 @@
-$("form").submit(function(e){
+function generateLink(valid){
+  
+  if(valid==false){ return; } console.log(valid);
 
-  e.preventDefault();
   $(".btn-submit").prop("disabled",true);
   bURL = base_url + '/Paymaya/request_payment';
   $.ajax({
@@ -17,4 +18,4 @@ $("form").submit(function(e){
     }
   });//END:: AJAX
 
-});//END:: FORM SUBMIT
+}//END:: generateLink

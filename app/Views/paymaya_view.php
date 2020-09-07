@@ -91,6 +91,7 @@
     <script> let base_url = "<?= base_url(); ?>"</script>
     <script src="<?= base_url('js/payment-request.js?v=').strtotime('now'); ?>"></script>
     <script>
+      valid = false;
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
@@ -102,10 +103,11 @@
           // Loop over them and prevent submission
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
+              // if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
-              }
+                generateLink(form.checkValidity());
+              // }
               form.classList.add('was-validated');
             }, false);
           });
