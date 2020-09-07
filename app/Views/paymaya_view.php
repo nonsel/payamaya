@@ -14,13 +14,18 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/checkout/form-validation.css" rel="stylesheet">
+    <style>
+      label{
+        font-weight: 500;
+      }
+    </style>
   </head>
 
   <body class="bg-light">
 
     <div class="container">
       <div class="py-5 text-center">
-        <img style="width:280px; height:100px;" class="d-block mx-auto mb-4" src="https://www.manilatimes.net/wp-content/uploads/2018/10/PayMaya-Logo20181007.jpg" alt="" width="72" height="72">
+        <img style="width:250px; height:180px;" class="d-block mx-auto mb-4" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
         <!-- <h2>Checkout form</h2>	 -->
       </div>
 
@@ -56,7 +61,7 @@
 
 						<div class="mb-3">
 							<label for="address2">Amount</label>
-							<input type="number" class="form-control" id="amount" step="0.01" name="amount" required>
+							<input type="number" class="form-control" id="amount" step="0.01" name="amount" max="100000" required>
 							<div class="invalid-feedback">
 								Amount is required.
 							</div>
@@ -67,6 +72,11 @@
           </form>
         </div>
       </div>
+      <br><br>
+      <div class="row">
+        <img class="d-block mx-auto mb-4" src="<?= base_url("image/logo_bottom.png"); ?>">
+      </div>
+      <br>
     </div>
 
     <!-- Bootstrap core JavaScript

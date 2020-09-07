@@ -20,7 +20,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <img style="width:280px; height:100px;" class="d-block mx-auto mb-4" src="https://www.manilatimes.net/wp-content/uploads/2018/10/PayMaya-Logo20181007.jpg" alt="" width="72" height="72">
+        <img style="width:250px; height:180px;" class="d-block mx-auto mb-4" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
         <!-- <h2>Checkout form</h2>	 -->
       </div>
 
