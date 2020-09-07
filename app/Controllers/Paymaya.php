@@ -137,7 +137,7 @@ class Paymaya extends BaseController
 
 			}else{
 				//Invalid ref number
-				return view('error_view');
+				return view('failure_view');
 			}
 
 		}//END:: ELSE
