@@ -24,7 +24,7 @@
   <body class="bg-light">
 
     <div class="container">
-      <div class="py-5 text-center">
+      <div class="py-2 text-center">
         <img style="width:250px; height:180px;" class="d-block mx-auto" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
         <!-- <h2>Checkout form</h2>	 -->
       </div>
@@ -43,7 +43,7 @@
 
             <div class="mb-3">
               <label for="address2">Amount</label>
-              <input type="number" class="form-control" id="amount" step="0.01" name="amount" max="100000" required>
+              <input type="number" class="form-control" id="amount" step="0.01" name="amount" max="300000" required>
               <div class="invalid-feedback">
                 <span class="error-amount"></span>
               </div>
@@ -67,17 +67,25 @@
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="address2">Phone Number</label>
-              <input type="text" class="form-control" id="phone-number" name="phone-number" required>
-              <div class="invalid-feedback">
-                Phone Number is required.
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="address2">Mobile Number</label>
+                <div class="input-group ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">+63</span>
+                  </div>
+                  <input type="text" class="form-control" id="phone-number" name="phone-number" minlength="10" maxlength="10" placeholder="9150000000" required>
+
+                  <div class="invalid-feedback">
+                    Phone Number is required.
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="mb-3">
               <label for="address2">Email Address</label>
-              <input type="text" class="form-control" id="email-address" name="email-address" required>
+              <input type="email" class="form-control" id="email-address" name="email-address" required>
               <div class="invalid-feedback">
                 Email Address is required.
               </div>
@@ -85,6 +93,9 @@
 
             <!-- <hr class="mb-4"> -->
             <button class="btn btn-primary btn-lg btn-block btn-submit" type="submit">Continue to Payment</button>
+            <div class="text-center mt-4">
+              <a href="<?= base_url('/') ?>">Select another payment method</a>
+            </div>
           </form>
         </div>
       </div>
@@ -120,8 +131,8 @@
           var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
               var amount = document.getElementById("amount");
-              if(amount.validationMessage=="Value must be less than or equal to 100000."){
-                $(".error-amount").text("Maximum of 100,000");
+              if(amount.validationMessage=="Value must be less than or equal to 300000."){
+                $(".error-amount").text("Maximum of 300,000");
               }else{
                 $(".error-amount").text("Amount is required");
               }

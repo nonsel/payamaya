@@ -2,13 +2,12 @@
 
 class Paymaya extends BaseController
 {
-	public function index()
-	{
-		return view('paymaya_view');
+	public function index(){
+		return view('paymaya/index');
 	}
 
 	public function request_payment(){
-		$url = 'https://pg-sandbox.paymaya.com/checkout/v1/checkouts';
+		$url = getenv('paymaya.url').'/checkout/v1/checkouts';
 
 		$request = service('request');
 
@@ -18,7 +17,7 @@ class Paymaya extends BaseController
 		$amount = $request->getPost('amount');
 		$phone_number = $request->getPost('phone-number');
 		$email_address = $request->getPost('email-address');
-		$ref_number = $order_id."".uniqid()."".strtotime('now');
+		$ref_number = $this->generateReference();
 
 		$totalAmount = array(
 	      	"value" => $amount,
@@ -33,45 +32,47 @@ class Paymaya extends BaseController
 		);
 
 		$buyer = array(
-											'firstName' => $firstname,
-											'lastName' => $lastname
-									);
+			'firstName' => $firstname,
+			'lastName' => $lastname,
+			"contact" => array(
+		      "phone" => "+63".$phone_number,
+		      "email" => $email_address
+		    )
+		);
 
 		// $itemList = array(
-	  //     	"name"=> "Payment for order number #123",
-	  //     	"quantity"=> 1,
-	  //     	"code"=> "CVG-096732",
-	  //     	"description"=> "Shoes",
-	  //     	"amount"=> array(
-	  //       	"value" => 100,
-	  //       	"details" => array(
-		// 	        "discount" => 0,
-		// 	        "serviceCharge" => 0,
-		// 	        "shippingFee" => 0,
-		// 	        "tax" => 0,
-		// 	        "subtotal" => 100
-		// 	    )
-    //     	),
-	  //     	"totalAmount" => $totalAmount
-		// );
+	 //      	"name"=> "Payment for order number #123",
+	 //      	"quantity"=> 1,
+	 //      	"code"=> "CVG-096732",
+	 //      	"description"=> "Shoes",
+	 //      	"amount"=> array(
+	 //      		"value" => 100,
+	 //      		"details" => array(
+	 //      			"discount" => 0,
+	 //      			"serviceCharge" => 0,
+	 //      			"shippingFee" => 0,
+	 //      			"tax" => 0,
+	 //      			"subtotal" => 100
+	 //      		)
+	 //      	),
+	 //      	"totalAmount" => $totalAmount
+	 //    );
 
 		$data = array(
 				"totalAmount" => $totalAmount,
 		   	// "items" => array($itemList),
 				"buyer" => $buyer,
-		  	"requestReferenceNumber" => $ref_number,
+		  		"requestReferenceNumber" => $ref_number,
 				"redirectUrl" => array(
-																	'success' => base_url("/Paymaya/Success?ref_number={$ref_number}"),
-																	'failure' => base_url("/Paymaya/Failure?ref_number={$ref_number}"),
-																	'cancel' => base_url("/Paymaya/Cancel?ref_number={$ref_number}")
-															)
-
+				'success' => base_url("/Paymaya/payment/{$ref_number}"),
+				'failure' => base_url("/Paymaya/payment/{$ref_number}"),
+				'cancel' => base_url("/Paymaya/payment/{$ref_number}")
+			)
 		);
 
 		$header = array();
 		$header[] = 'Content-type: application/json';
-		//post key
-		$header[] = 'Authorization: Basic '.getenv('paymaya.postKey');
+		$header[] = 'Authorization: Basic '.base64_encode(getenv('paymaya.public_key'));
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -88,39 +89,36 @@ class Paymaya extends BaseController
 
 		$server_output = json_decode($server_output);
 
-		//SAVE Checkout Information
 		$db = db_connect();
 		$builder = $db->table('checkouts');
 
 		$data = [
-						'order_id' => $order_id,
-						'requestReferenceNumber' => $ref_number,
-						'checkoutId' => $server_output->checkoutId,
-						'redirectUrl'	=> $server_output->redirectUrl,
-						'first_name'  => $firstname,
-						'last_name'  => $lastname,
-						'amount'  => $amount,
-						'phone_number' => $phone_number,
-						'email_address' => $email_address,
-						'payment_channel' => "PAYMAYA",
-						'date_created'  => strtotime('now')
+			'order_id' => $order_id,
+			'requestReferenceNumber' => $ref_number,
+			'checkoutId' => $server_output->checkoutId,
+			'redirectUrl'	=> $server_output->redirectUrl,
+			'first_name'  => $firstname,
+			'last_name'  => $lastname,
+			'amount'  => $amount,
+			'phone_number' => $phone_number,
+			'email_address' => $email_address,
+			'payment_channel' => "PAYMAYA",
+			'date_created'  => strtotime('now')
 		];
 
 		$builder->insert($data);
 
 		return $this->response->setJSON($server_output);
-	}//END:: request_payment
+	}
 
-	function Success(){
+	public function payment($ref_number){
+		$checkoutId = $this->checkRefNum($ref_number);
 
-		$checkoutId = $this->checkRefNum();
-
-		$url = "https://pg-sandbox.paymaya.com/checkout/v1/checkouts/".$checkoutId;
+		$url = getenv('paymaya.url')."/checkout/v1/checkouts/".$checkoutId;
 
 		$header = array();
 		$header[] = 'Content-type: application/json';
-		//getKey
-		$header[] = 'Authorization: Basic '.getenv('paymaya.getKey');
+		$header[] = 'Authorization: Basic '.base64_encode(getenv('paymaya.secret_key'));
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -133,82 +131,74 @@ class Paymaya extends BaseController
 
 		if ($server_output === false){
 			$server_output = curl_error($ch);
-			return view('error_view');
-		}else{
+			// redirect to 404 page
+			return view('errors/html/error_404');
+		}
+		else{
 			$server_output = json_decode($server_output);
-
 			if(isset($server_output->paymentStatus)){
 
-				// Update Checkout
 				$db = db_connect();
 				$builder = $db->table('checkouts');
 				$builder->set('paymentStatus', $server_output->paymentStatus);
 				$builder->where('checkoutId', $server_output->id);
 				$builder->update();
 
-				return view('success_view');
-
-			}else{
-				//Invalid ref number
-				return view('failure_view');
+				return view('paymaya/landing', $this->result_data($server_output->paymentStatus));
 			}
-
-		}//END:: ELSE
-
-		// echo stripslashes($server_output);
-
-		curl_close ($ch);
-
-	}//END:: SUCCESS
-
-	function Failure(){
-
-		$checkoutId = $this->checkRefNum();
-
-		$url = "https://pg-sandbox.paymaya.com/checkout/v1/checkouts/".$checkoutId;
-
-		$header = array();
-		$header[] = 'Content-type: application/json';
-		//getKey
-		$header[] = 'Authorization: Basic '.getenv('paymaya.getKey');
-
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		curl_setopt($ch, CURLOPT_URL, $url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-		$server_output = curl_exec($ch);
-
-		if ($server_output === false){
-			$server_output = curl_error($ch);
-		}else{
-			$server_output = json_decode($server_output);
-
-			if(isset($server_output->paymentStatus)){
-				// Update Checkout
-				$db = db_connect();
-				$builder = $db->table('checkouts');
-				$builder->set('paymentStatus', $server_output->paymentStatus);
-				$builder->where('checkoutId', $server_output->id);
-				$builder->update();
+			else{
+				// redirect to 404 page
+				return view('errors/html/error_404');
 			}
-		}//END:: ELSE
-
+		}
 		curl_close ($ch);
-
-		return view('failure_view');
 	}
 
-	function Cancel(){
+	public function generateReference(){
+		helper('text');
+		$ref_number = strtoupper(random_string('alnum', 10));
 
+		$db = db_connect();
+		$builder = $db->table('checkouts');
+
+		$builder->selectCount('checkoutId');
+		$builder->where('requestReferenceNumber', $ref_number);
+		$query = $builder->countAllResults();
+
+		if($query > 0){
+			$this->generateReference();		}
+		else{
+			return $ref_number;
+		}
 	}
 
-	private function checkRefNum(){
-		$request = service('request');
-		$ref_number = $request->getGet('ref_number');
+	private function result_data($status){
+		// valid status
+		// ['PAYMENT_SUCCESS','PAYMENT_FAILED','PAYMENT_EXPIRED']
 
+		$info = array();
+		$info['status'] = $status;
+
+		if($status == 'PAYMENT_SUCCESS'){
+			$info['title'] = 'Payment Successful';
+			$info['message'] = 'Your payment has been processed successfully and confirmed';
+			$info['image'] = 'image/success.png';
+		}
+		else if(in_array($status, ['PAYMENT_FAILED','AUTH_FAILED'])){
+			$info['title'] = 'Payment Failed';
+			$info['message'] = 'Please try again.';
+			$info['image'] = 'image/error.png';
+		}
+		else if($status == 'PAYMENT_EXPIRED'){
+			$info['title'] = 'Invalid Request';
+			$info['message'] = 'The link you\'re trying to access is invalid or has already expired.';
+			$info['image'] = 'image/error.png';
+		}
+
+		return $info;
+	}
+
+	private function checkRefNum($ref_number){
 		$db = db_connect();
 		$builder = $db->table('checkouts');
 
@@ -217,13 +207,15 @@ class Paymaya extends BaseController
 		$query = $builder->get();
 
 		$checkoutId = 0;
-		foreach ($query->getResult() as $row)
-		{
-    	$checkoutId =  $row->checkoutId;
+		foreach ($query->getResult() as $row){
+    		$checkoutId =  $row->checkoutId;
 		}
 
 		return $checkoutId;
+	}
 
+	private function generate_auth($key){
+		return base64_encode($key.":");
 	}
 
 }

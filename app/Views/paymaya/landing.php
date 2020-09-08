@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?= base_url('image/favicon.png'); ?>">
+    <link rel="icon" href="<?= base_url('image/logo-lindenteak.png'); ?>">
 
     <title>LINDENTEAK</title>
 
@@ -20,15 +20,16 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <img style="width:250px; height:180px;" class="d-block mx-auto mb-4" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
+        <img style="width:250px; height:180px;" class="d-block mx-auto" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
         <!-- <h2>Checkout form</h2>	 -->
       </div>
 
       <div class="row d-flex justify-content-center">
         <div class="col-md-8 order-md-1">
           <center>
-            <img src="<?= base_url('image/error.png') ?>">
-            <h1>Payment Failed</h1>
+            <img src="<?= base_url($image) ?>">
+            <h1><?= $title ?></h1>
+            <p><?= $message ?></p>
             <a href="<?= base_url('/') ?>">Return Home</a>
           </center>
         </div>
