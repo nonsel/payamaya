@@ -25,7 +25,7 @@
 
     <div class="container">
       <div class="py-5 text-center">
-        <img style="width:250px; height:180px;" class="d-block mx-auto mb-4" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
+        <img style="width:250px; height:180px;" class="d-block mx-auto" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72">
         <!-- <h2>Checkout form</h2>	 -->
       </div>
 
@@ -34,7 +34,7 @@
           <form id="PaymentForm" class="needs-validation" novalidate="">
 
 						<div class="mb-3">
-							<label for="address2">Order Number</label>
+							<label for="address2">Order No.</label>
 							<input type="text" class="form-control" id="order-id" name="order-id" required>
 							<div class="invalid-feedback">
 								Order ID is required.
