@@ -100,7 +100,7 @@
                   table += "<td>"+a[x].phone_number+"</td>";
                   table += "<td>"+a[x].email_address+"</td>";
                   table += "<td>"+a[x].paymentStatus+"</td>";
-                  table += "<td></td>";
+                  table += "<td>"+a[x].payment_channel+"</td>";
                   table += "<td>"+a[x].date_created+"</td>";
                 table += "</tr>";
               }//END:: FOR
