@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?= base_url('image/favicon.png'); ?>">
+    <link rel="icon" href="<?= base_url('image/logo-lindenteak.png'); ?>">
 
     <title>Paymaya</title>
 
@@ -24,7 +24,7 @@
   <body class="bg-light">
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Dashboard</h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal"><img src="<?= base_url('image/logo-lindenteak.png'); ?>" class="img-fluid" alt="Responsive image"></h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <!-- <a class="p-2 text-dark" href="#">Features</a>
         <a class="p-2 text-dark" href="#">Enterprise</a>
@@ -36,7 +36,15 @@
 
     <div class="container-fluid">
       <br><br>
-      <h3>Checkout List</h3>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Checkout List</h3>
+        </div>
+        <div class="col-lg-6">
+          <button onclick="getCheckouts()" style="float:right;"class="btn btn-secondary btn-refresh">Refresh</button>
+        </div>
+      </div>
+
       <br>
       <table class="tbl-checkout table-striped">
         <thead>
@@ -75,9 +83,13 @@
     <script> let base_url = "<?= base_url(); ?>"</script>
     <script>
 
+    var getCheckouts,dt;
+
     $(document).ready( function () {
 
-      function getCheckouts(){
+      getCheckouts = function (){
+
+        $('.btn-refresh').text("Refreshing...");
 
         bURL = base_url + '/Dashboard/getCheckouts';
         $.ajax({
@@ -105,7 +117,11 @@
                 table += "</tr>";
               }//END:: FOR
               $(".tbl-checkout tbody").html(table);
-              $('.tbl-checkout').DataTable({"order": []});
+              if(dt){
+                dt.destroy();
+              }
+              dt = $('.tbl-checkout').DataTable({"order": []});
+              $('.btn-refresh').text("Refresh");
             }//END:: IF
 
           },
