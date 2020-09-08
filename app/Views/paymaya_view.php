@@ -34,12 +34,20 @@
           <form id="PaymentForm" class="needs-validation" novalidate="">
 
 						<div class="mb-3">
-							<label for="address2">Order ID</label>
+							<label for="address2">Order Number</label>
 							<input type="text" class="form-control" id="order-id" name="order-id" required>
 							<div class="invalid-feedback">
 								Order ID is required.
 							</div>
 						</div>
+
+            <div class="mb-3">
+              <label for="address2">Amount</label>
+              <input type="number" class="form-control" id="amount" step="0.01" name="amount" max="100000" required>
+              <div class="invalid-feedback">
+                <span class="error-amount"></span>
+              </div>
+            </div>
 
             <div class="row">
               <div class="col-md-6 mb-3">
@@ -58,14 +66,6 @@
                 </div>
               </div>
             </div>
-
-						<div class="mb-3">
-							<label for="address2">Amount</label>
-							<input type="number" class="form-control" id="amount" step="0.01" name="amount" max="100000" required>
-							<div class="invalid-feedback">
-								<span class="error-amount"></span>
-							</div>
-						</div>
 
             <div class="mb-3">
               <label for="address2">Phone Number</label>
