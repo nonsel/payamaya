@@ -101,6 +101,7 @@ class Paymaya extends BaseController
 						'amount'  => $amount,
 						'phone_number' => $phone_number,
 						'email_address' => $email_address,
+						'payment_channel' => "PAYMAYA",
 						'date_created'  => strtotime('now')
 		];
 
