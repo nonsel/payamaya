@@ -70,7 +70,8 @@ class Paymaya extends BaseController
 
 		$header = array();
 		$header[] = 'Content-type: application/json';
-		$header[] = 'Authorization: Basic cGstWjBPU3pMdkljT0kyVUl2RGhkVEdWVmZSU1NlaUdTdG5jZXF3VUU3bjBBaDo=';
+		//post key
+		$header[] = 'Authorization: Basic '.getenv('paymaya.postKey');
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -118,7 +119,8 @@ class Paymaya extends BaseController
 
 		$header = array();
 		$header[] = 'Content-type: application/json';
-		$header[] = 'Authorization: Basic c2stWDhxb2xZank2MmtJekVicjBRUksxaDRiNEtEVkhhTmN3TVlrMzlqSW5TbDo=';
+		//getKey
+		$header[] = 'Authorization: Basic '.getenv('paymaya.getKey');
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -167,7 +169,8 @@ class Paymaya extends BaseController
 
 		$header = array();
 		$header[] = 'Content-type: application/json';
-		$header[] = 'Authorization: Basic c2stWDhxb2xZank2MmtJekVicjBRUksxaDRiNEtEVkhhTmN3TVlrMzlqSW5TbDo=';
+		//getKey
+		$header[] = 'Authorization: Basic '.getenv('paymaya.getKey');
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
