@@ -32,7 +32,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-md-8 order-md-1">
           <form id="PaymentForm" class="needs-validation" novalidate="">
-
+            <?= csrf_field() ?>
 						<div class="mb-3">
 							<label for="address2">Order No.</label>
 							<input type="text" class="form-control" id="order-id" name="order-id" required>

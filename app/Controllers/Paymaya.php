@@ -154,7 +154,7 @@ class Paymaya extends BaseController
 		curl_close ($ch);
 	}
 
-	public function generateReference(){
+	private function generateReference(){
 		helper('text');
 		$ref_number = strtoupper(random_string('alnum', 10));
 

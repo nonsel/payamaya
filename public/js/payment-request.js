@@ -1,8 +1,11 @@
 function generateLink(valid){
-
-  if(valid==false){ return; }
-
   $(".btn-submit").prop("disabled",true);
+
+  if(valid==false){ 
+    $(".btn-submit").prop("disabled",false);
+    return; 
+  }
+
   bURL = base_url + '/Paymaya/request_payment';
   $.ajax({
     url: bURL,
@@ -11,10 +14,9 @@ function generateLink(valid){
     data: $("#PaymentForm").serialize(),
     success: function(response){
       window.location.href = response.redirectUrl;
-      $(".btn-submit").prop("disabled",false);
     },
     error: function(){
-
+      $(".btn-submit").prop("disabled",false);
     }
   });//END:: AJAX
 
