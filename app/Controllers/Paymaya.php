@@ -24,13 +24,18 @@ class Paymaya extends BaseController
 	      	"value" => $amount,
 	      	"currency" => "PHP",
 	      	"details" => array(
-	         	"discount" => 0,
-	         	"serviceCharge" => 0,
-	         	"shippingFee" => 0,
-	         	"tax" => 0,
+	         	// "discount" => 0,
+	         	// "serviceCharge" => 0,
+	         	// "shippingFee" => 0,
+	         	// "tax" => 0,
 	         	"subtotal" => $amount
 	      	)
 		);
+
+		$buyer = array(
+											'firstName' => $firstname,
+											'lastName' => $lastname
+									);
 
 		// $itemList = array(
 	  //     	"name"=> "Payment for order number #123",
@@ -53,6 +58,7 @@ class Paymaya extends BaseController
 		$data = array(
 				"totalAmount" => $totalAmount,
 		   	// "items" => array($itemList),
+				"buyer" => $buyer,
 		  	"requestReferenceNumber" => $ref_number,
 				"redirectUrl" => array(
 																	'success' => base_url("/Paymaya/Success?ref_number={$ref_number}"),
