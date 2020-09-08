@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<?= base_url('image/logo-lindenteak.png'); ?>">
 
-    <title>Paymaya</title>
+    <title>LINDENTEAK</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
