@@ -28,10 +28,13 @@
         <!-- <img style="width:250px; height:180px;" class="d-block mx-auto mb-4" src="<?= base_url('image/paymaya_logo.png') ?>" alt="" width="72" height="72"> -->
         <br><br><br>
         <h2>Dashboard</h2>
-      </div>
 
+      </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-8 order-md-1">
+          <center id="login-error" style="color:red; display:none;">
+            <p>Invalid Username or Password</p>
+          </center>
           <form id="PaymentForm">
 
 						<div class="mb-3">
@@ -41,7 +44,7 @@
 
             <div class="mb-3">
               <label for="address2">Password</label>
-              <input type="text" class="form-control" id="password" name="password" required>
+              <input type="password" class="form-control" id="password" name="password" required>
             </div>
 
             <!-- <hr class="mb-4"> -->
@@ -75,7 +78,12 @@
           dataType: 'json',
           data: $("#PaymentForm").serialize(),
           success: function(response){
-            console.log(response);
+            if(response.error==0){
+              $("#login-error").hide();
+              location.reload();
+            }else{
+              $("#login-error").show();
+            }
             $(".btn-submit").prop("disabled",false);
           },
           error: function(){
