@@ -105,7 +105,7 @@
                 table += "</tr>";
               }//END:: FOR
               $(".tbl-checkout tbody").html(table);
-              $('.tbl-checkout').DataTable();
+              $('.tbl-checkout').DataTable({"order": []});
             }//END:: IF
 
           },

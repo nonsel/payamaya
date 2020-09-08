@@ -14,7 +14,7 @@ class Dashboard extends BaseController
 
   public function getCheckouts(){
 
-    $sql = "SELECT *,DATE_FORMAT(FROM_UNIXTIME(date_created), '%b/%d/%Y') as date_created FROM checkouts";
+    $sql = "SELECT *,DATE_FORMAT(FROM_UNIXTIME(date_created), '%b/%d/%Y') as date_created FROM checkouts ORDER BY id DESC";
     $db = db_connect();
     if ($query = $db->query($sql))
     {
