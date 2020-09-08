@@ -16,6 +16,8 @@ class Paymaya extends BaseController
 		$firstname = $request->getPost('firstname');
 		$lastname = $request->getPost('lastname');
 		$amount = $request->getPost('amount');
+		$phone_number = $request->getPost('phone-number');
+		$email_address = $request->getPost('email-address');
 		$ref_number = $order_id."".uniqid()."".strtotime('now');
 
 		$totalAmount = array(
@@ -91,6 +93,8 @@ class Paymaya extends BaseController
 						'first_name'  => $firstname,
 						'last_name'  => $lastname,
 						'amount'  => $amount,
+						'phone_number' => $phone_number,
+						'email_address' => $email_address,
 						'date_created'  => strtotime('now')
 		];
 

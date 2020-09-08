@@ -67,6 +67,22 @@
 							</div>
 						</div>
 
+            <div class="mb-3">
+              <label for="address2">Phone Number</label>
+              <input type="text" class="form-control" id="phone-number" name="phone-number" required>
+              <div class="invalid-feedback">
+                Phone Number is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Email Address</label>
+              <input type="text" class="form-control" id="email-address" name="email-address" required>
+              <div class="invalid-feedback">
+                Email Address is required.
+              </div>
+            </div>
+
             <!-- <hr class="mb-4"> -->
             <button class="btn btn-primary btn-lg btn-block btn-submit" type="submit">Continue to Payment</button>
           </form>
