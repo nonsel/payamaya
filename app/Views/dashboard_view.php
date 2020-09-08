@@ -31,7 +31,7 @@
         <a class="p-2 text-dark" href="#">Support</a>
         <a class="p-2 text-dark" href="#">Pricing</a> -->
       </nav>
-      <a class="btn btn-outline-primary" href="#">Logout</a>
+      <a class="btn btn-outline-primary" href="<?= base_url('Login/logout'); ?>">Logout</a>
     </div>
 
     <div class="container-fluid">
