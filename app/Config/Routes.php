@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Main::index');
 $routes->get('/payment/(:any)', 'Paymaya::payment/:ref_number');
+$routes->get('/api/paymaya/webhook', 'Paymaya::webhook');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
