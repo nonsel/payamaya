@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Main::index');
 $routes->get('/payment/(:any)', 'Paymaya::payment/:ref_number');
 $routes->get('/api/paymaya/webhook', 'Paymaya::webhook');
+$routes->get('/paymaya/privacy-policy', 'Privacy::index');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -3,9 +3,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="robots" content="noindex" />
     <link rel="icon" href="<?= base_url('image/logo-lindenteak.png'); ?>">
 
-    <title>LINDENTEAK</title>
+    <title>Linden Teak Furniture | Payment Methods</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
@@ -58,7 +59,7 @@
           <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center cursor-pointer" onclick="selected_payment('<?= base_url('Paymaya'); ?>')">
             <!-- <a href="<?= base_url('Paymaya'); ?>"> -->
               <div class="d-flex justify-content-center">
-                <img src="<?= base_url('image/main-paymaya.png'); ?>" class="img-fluid" alt="Paymaya">
+                <img src="<?= base_url('image/main-paymaya.jpg'); ?>" class="img-fluid" alt="Paymaya">
               </div>
             <!-- </a> -->
           </div>
@@ -81,13 +82,18 @@
         </div>
       </div>
     </div>
-    <div class="container pt-4">
+    <div class="container pt-4 pb-4">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 text-center text-lg-left">
           <img src="<?= base_url('image/secure-payment.png'); ?>" class="img-fluid" alt="Responsive image">
+          <ul class="list-unstyled text-small pl-2 mt-2" style="line-height: 2">
+            <li><a class="text-muted" href="<?= base_url('paymaya/privacy-policy') ?>">Privacy policy</a></li>
+            <li><a class="text-muted" href="https://media.wix.com/ugd/f034d8_473be673e5b74671acf13de694b90e9e.pdf">Terms & Conditions</a></li>
+          </ul>
         </div>
-        <div class="col-lg-6 d-flex align-items-center justify-content-end">
-          <span class="font-weight-bold">Designed & built by <a href="http://thinkdigitalph.com/" target="_blank">Think Digital PH</a></span>
+        <div class="col-lg-6 text-center text-lg-right">
+          <hr class="d-lg-none">
+          <span>Designed & built by <a href="http://thinkdigitalph.com/" target="_blank">Think Digital PH</a></span>
         </div>
       </div>
     </div>

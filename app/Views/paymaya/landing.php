@@ -3,9 +3,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="<?= base_url('image/logo-lindenteak.png'); ?>">
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="<?= base_url('image/payamaya-favicon.png'); ?>">
 
-    <title>LINDENTEAK</title>
+    <title>Linden Teak Furniture | Payment Methods</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
@@ -30,7 +31,7 @@
             <img src="<?= base_url($image) ?>">
             <h1><?= $title ?></h1>
             <p><?= $message ?></p>
-            <a href="<?= base_url('/') ?>">Return Home</a>
+            <a href="<?= $return_url ?>">Return Home</a>
           </center>
         </div>
       </div>

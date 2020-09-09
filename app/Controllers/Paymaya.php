@@ -187,16 +187,19 @@ class Paymaya extends BaseController
 			$info['title'] = 'Payment Successful';
 			$info['message'] = 'Your payment has been processed successfully and confirmed';
 			$info['image'] = 'image/success.png';
+			$info['return_url'] = 'https://www.lindenteakfurniture.com/';
 		}
 		else if(in_array($status, ['PAYMENT_FAILED','AUTH_FAILED'])){
 			$info['title'] = 'Payment Failed';
 			$info['message'] = 'Please try again.';
 			$info['image'] = 'image/error.png';
+			$info['return_url'] = 'https://pay.lindenteakfurniture.com/';
 		}
 		else if($status == 'PAYMENT_EXPIRED'){
 			$info['title'] = 'Invalid Request';
 			$info['message'] = 'The link you\'re trying to access is invalid or has already expired.';
 			$info['image'] = 'image/error.png';
+			$info['return_url'] = 'https://pay.lindenteakfurniture.com/';
 		}
 
 		return $info;
