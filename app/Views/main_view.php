@@ -87,7 +87,7 @@
         <div class="col-lg-6 text-center text-lg-left">
           <img src="<?= base_url('image/secure-payment.png'); ?>" class="img-fluid" alt="Responsive image">
           <ul class="list-unstyled text-small pl-2 mt-2" style="line-height: 2">
-            <li><a class="text-muted" href="<?= base_url('paymaya/privacy-policy') ?>">Privacy policy</a></li>
+            <li><a class="text-muted" href="<?= base_url('privacy-policy') ?>">Privacy policy</a></li>
             <li><a class="text-muted" href="https://media.wix.com/ugd/f034d8_473be673e5b74671acf13de694b90e9e.pdf">Terms & Conditions</a></li>
           </ul>
         </div>

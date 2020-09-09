@@ -4,6 +4,6 @@ class Privacy extends BaseController
 {
 	public function index()
 	{
-		return view('paymaya/privacy-policy');
+		return view('privacy-policy');
 	}
 }
