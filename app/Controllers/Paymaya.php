@@ -154,6 +154,10 @@ class Paymaya extends BaseController
 		curl_close ($ch);
 	}
 
+	public function webhook(){
+		return $this->response->setStatusCode(200);
+	}
+
 	private function generateReference(){
 		helper('text');
 		$ref_number = strtoupper(random_string('alnum', 10));
