@@ -106,15 +106,15 @@
 
               for(x in a){
                 table += "<tr>";
-                  table += "<td>"+a[x].order_id+"</td>";
-                  table += "<td>"+a[x].first_name+"</td>";
-                  table += "<td>"+a[x].last_name+"</td>";
-                  table += "<td>"+a[x].amount+"</td>";
-                  table += "<td>"+a[x].phone_number+"</td>";
-                  table += "<td>"+a[x].email_address+"</td>";
-                  table += "<td>"+a[x].paymentStatus+"</td>";
-                  table += "<td>"+a[x].payment_channel+"</td>";
-                  table += "<td>"+a[x].date_created+"</td>";
+                table += "<td>"+a[x].order_id+"</td>";
+                table += "<td>"+a[x].first_name+"</td>";
+                table += "<td>"+a[x].last_name+"</td>";
+                table += "<td class='text-right'>" + formatCurrency(a[x].amount).replace('PHP', '') + "</td>";
+                table += "<td>"+a[x].phone_number+"</td>";
+                table += "<td>"+a[x].email_address+"</td>";
+                table += "<td>"+a[x].paymentStatus+"</td>";
+                table += "<td>"+a[x].payment_channel+"</td>";
+                table += "<td>"+a[x].date_created+"</td>";
                 table += "</tr>";
               }//END:: FOR
               $(".tbl-checkout tbody").html(table);
@@ -135,7 +135,15 @@
 
       getCheckouts()
 
+      function formatCurrency(amount){
+        var format = new Intl.NumberFormat('en-US', { 
+          style: 'currency', 
+          currency: 'PHP', 
+          minimumFractionDigits: 2, 
+        }); 
 
+        return format.format(amount);
+      }
     });
 
     </script>

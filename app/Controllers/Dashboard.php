@@ -2,8 +2,11 @@
 
 class Dashboard extends BaseController
 {
+  
+
 	public function index()
 	{
+    helper('number');
     $session = session();
 		if($session->get('isLogged')==FALSE){
 			header('Location: '.base_url()."/Login");
