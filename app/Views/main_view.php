@@ -59,7 +59,7 @@
           <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center cursor-pointer" onclick="selected_payment('<?= base_url('Paymaya'); ?>')">
             <!-- <a href="<?= base_url('Paymaya'); ?>"> -->
               <div class="d-flex justify-content-center">
-                <img src="<?= base_url('image/main-paymaya.jpg'); ?>" class="img-fluid" alt="Paymaya">
+                <img src="<?= base_url('image/main-creditcard.jpg'); ?>" class="img-fluid" alt="Paymaya">
               </div>
             <!-- </a> -->
           </div>

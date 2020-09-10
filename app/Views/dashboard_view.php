@@ -50,7 +50,7 @@
       <table class="tbl-checkout table-striped">
         <thead>
           <tr>
-            <th scope="col">Order Number</th>
+            <!-- <th scope="col">Order Number</th> -->
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Amount</th>
@@ -106,7 +106,7 @@
 
               for(x in a){
                 table += "<tr>";
-                table += "<td>"+a[x].order_id+"</td>";
+                // table += "<td>"+a[x].order_id+"</td>";
                 table += "<td>"+a[x].first_name+"</td>";
                 table += "<td>"+a[x].last_name+"</td>";
                 table += "<td class='text-right'>" + formatCurrency(a[x].amount).replace('PHP', '') + "</td>";

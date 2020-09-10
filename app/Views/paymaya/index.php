@@ -34,9 +34,9 @@
         <div class="col-md-8 order-md-1">
           <form id="PaymentForm" class="needs-validation" novalidate="">
             <?= csrf_field() ?>
-						<div class="mb-3">
+						<div class="mb-3" style="display: none">
 							<label for="address2">Order No.</label>
-							<input type="text" class="form-control" id="order-id" name="order-id" required>
+							<input type="hidden" class="form-control" id="order-id" name="order-id">
 							<div class="invalid-feedback">
 								Order ID is required.
 							</div>
