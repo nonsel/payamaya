@@ -26,7 +26,9 @@
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom shadow-sm">
       <div class="container">
-        <h5 class="my-0 mr-md-auto font-weight-normal"><img src="<?= base_url('image/logo-lindenteak.png'); ?>" class="img-fluid" alt="Responsive image"></h5>
+        <a href="<?= base_url('/'); ?>">
+          <h5 class="my-0 mr-md-auto font-weight-normal"><img src="<?= base_url('image/logo-lindenteak.png'); ?>" class="img-fluid" alt="Responsive image"></h5>
+        </a>
         <nav class="my-2 my-md-0 mr-md-3">
         </nav>
       </div>
@@ -43,8 +45,9 @@
       .disabled{
         border: solid 1px #dadada;
         filter: grayscale(100%);
+        cursor: not-allowed !important;
       }
-      .cursor-pointer{
+      .menu{
         cursor: pointer;
       }
     </style>
@@ -56,28 +59,22 @@
 
         <div class="row">
 
-          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center cursor-pointer" onclick="selected_payment('<?= base_url('Paymaya'); ?>')">
-            <!-- <a href="<?= base_url('Paymaya'); ?>"> -->
-              <div class="d-flex justify-content-center">
-                <img src="<?= base_url('image/main-paymaya.jpg'); ?>" class="img-fluid" alt="Paymaya">
-              </div>
-            <!-- </a> -->
+          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center menu" onclick="selected_payment('<?= base_url('Paymaya'); ?>')">
+            <div class="d-flex justify-content-center">
+              <img src="<?= base_url('image/main-paymaya.jpg'); ?>" class="img-fluid" alt="Paymaya">
+            </div>
           </div>
 
-          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center disabled">
-            <a href="#">
-              <div class="d-flex justify-content-center">
-                <img src="<?= base_url('image/main-gcash.png'); ?>" class="img-fluid" alt="Gcash">
-              </div>
-            </a>
+          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center menu" onclick="selected_payment('<?= base_url('Gcash'); ?>')">
+            <div class="d-flex justify-content-center">
+              <img src="<?= base_url('image/main-gcash.png'); ?>" class="img-fluid" alt="Gcash">
+            </div>
           </div>
 
-          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center disabled">
-            <a href="#">
-              <div class="d-flex justify-content-center">
-                <img src="<?= base_url('image/main-creditcard.jpg'); ?>" class="img-fluid" alt="Union Bank">
-              </div>
-            </a>
+          <div class="col-lg-3 div-payment d-flex align-items-center justify-content-center menu disabled">
+            <div class="d-flex justify-content-center">
+              <img src="<?= base_url('image/main-creditcard.jpg'); ?>" class="img-fluid" alt="Union Bank">
+            </div>
           </div>
         </div>
       </div>
@@ -102,14 +99,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script> let base_url = "<?= base_url(); ?>"</script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script> let base_url = "<?= base_url(); ?>"</script>
-    <script src="<?= base_url('js/payment-request.js?v=').strtotime('now'); ?>"></script>
+    <script src="<?= base_url('js/commons.js?v=').strtotime('now'); ?>"></script>
 
 
 </body></html>
