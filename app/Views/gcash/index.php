@@ -64,6 +64,10 @@
               <a href="<?= base_url('/') ?>">Select another payment method</a>
             </div>
           </form>
+
+          <form action="com.globetel.gcash://" target="_blank">
+            <input type="submit" value="Open App" />
+          </form>
         </div>
       </div>
       <br><br>

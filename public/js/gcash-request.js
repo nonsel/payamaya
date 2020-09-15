@@ -15,11 +15,11 @@ function generateLink(valid){
     type: "POST",
     dataType: 'json',
     data: $("#PaymentForm").serialize(),
-    // success: function(response){
-    //   window.location.href = response.redirectUrl;
-    // },
-    // error: function(){
-    //   $(".btn-submit").prop("disabled",false);
-    // }
+    success: function(response){
+      window.location.href = 'com.globetel.gcash://';
+    },
+    error: function(){
+      $(".btn-submit").prop("disabled",false);
+    }
   });
 }
