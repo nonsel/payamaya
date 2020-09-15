@@ -65,7 +65,7 @@
             </div>
           </form>
 
-          <form action="com.globetel.gcash://" target="_blank">
+          <form action="gcash://" target="_blank">
             <input type="submit" value="Open App" />
           </form>
         </div>
