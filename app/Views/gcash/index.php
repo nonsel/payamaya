@@ -65,7 +65,7 @@
             </div>
           </form>
 
-          <form action="gcash://" target="_blank">
+          <form action="adyencheckout://com.globe.gcash.android" target="_blank">
             <input type="submit" value="Open App" />
           </form>
         </div>
