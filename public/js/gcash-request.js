@@ -23,3 +23,11 @@ function generateLink(valid){
     }
   });
 }
+
+function openApp1(){
+  window.location = 'market://details?id=com.globe.gcash.android'
+}
+
+function openApp2(){
+  window.open('android-app://com.globe.gcash.android',"_self");
+}

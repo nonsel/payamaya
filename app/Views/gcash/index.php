@@ -65,15 +65,8 @@
             </div>
           </form>
 
-          <form action="com.globetel.gcash://com.globe.gcash.android">
-            <input type="submit" value="Open App1" />
-          </form>
-          <form action="gcash://com.globe.gcash.android">
-            <input type="submit" value="Open App2" />
-          </form>
-          <form action="android-app://com.globe.gcash.android">
-            <input type="submit" value="Open App3" />
-          </form>
+          <input type="button" value="Open App1" onclick="openApp1()" />
+          <input type="button" value="Open App2" onclick="openApp2()" />
         </div>
       </div>
       <br><br>
