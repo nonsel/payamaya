@@ -64,11 +64,16 @@
               <a href="<?= base_url('/') ?>">Select another payment method</a>
             </div>
           </form>
-
-          <input type="button" value="Open App1" onclick="openApp1()" />
-          <input type="button" value="Open App2" onclick="openApp2()" />
-          <input type="button" value="Open App3" onclick="openApp3()" />
-          <input type="button" value="Open App4" onclick="openApp4()" />
+          
+          <a href="intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;package=com.android.chrome;end"> 
+            <input type="button" value="Open App1"/>
+          </a>
+          <a href="intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;">
+            <input type="button" value="Open App2"/>
+          </a>
+          <!-- <input type="button" value="Open App2" onclick="openApp2()" /> --> 
+          <!-- <input type="button" value="Open App3" onclick="openApp3()" /> --> 
+          <!-- <input type="button" value="Open App4" onclick="openApp4()" /> -->
         </div>
       </div>
       <br><br>

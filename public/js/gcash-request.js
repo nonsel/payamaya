@@ -37,5 +37,5 @@ function openApp3(){
 }
 
 function openApp4(){
-  window.open('intent://scan/#Intent;scheme=clashofclans;package=com.supercell.clashofclans;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.supercell.clashofclans&amp;%26referrer%3Dkinlan;end',"_self");
+  window.open('intent://scan/#Intent;scheme=clashofclans;package=com.supercell.clashofclans;S.browser_fallback_url=https://play.google.com/store/apps/details/id/com.supercell.clashofclans&amp;%26referrer%3Dkinlan;end',"_self");
 }
