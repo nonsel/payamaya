@@ -59,7 +59,9 @@
             </div>
 
             <!-- <hr class="mb-4"> -->
-            <button class="btn btn-primary btn-lg btn-block btn-submit" type="submit">Click to Open GCash App</button>
+            <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end">
+              <button class="btn btn-primary btn-lg btn-block btn-submit" type="submit">Click to Open GCash App</button>
+            </a>
             <div class="text-center mt-4">
               <a href="<?= base_url('/') ?>">Select another payment method</a>
             </div>

@@ -16,7 +16,7 @@ function generateLink(valid){
     dataType: 'json',
     data: $("#PaymentForm").serialize(),
     success: function(response){
-      window.location.href = 'intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;';
+      // window.location.href = 'intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;';
     },
     error: function(){
       $(".btn-submit").prop("disabled",false);
