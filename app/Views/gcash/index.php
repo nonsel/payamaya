@@ -75,6 +75,7 @@
 
           <a href="intent://scan/#Intent;scheme=http;package=com.globe.gcash.android;end"> Take2 a QR code </a>
           <a href="intent://scan/#Intent;scheme=https;package=com.globe.gcash.android;end"> Take2 a QR code </a>
+          <a href="intent://scan/#Intent;scheme=app;package=com.globe.gcash.android;end"> Take2 a QR code </a>
           <!-- <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"> Take3 a QR code </a> -->
           <!-- <input type="button" value="Open App2" onclick="openApp2()" /> --> 
           <!-- <input type="button" value="Open App3" onclick="openApp3()" /> --> 
