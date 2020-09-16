@@ -72,10 +72,9 @@
           <a href="intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;">
             <input type="button" value="Open App2"/>
           </a> -->
-          <a href="intent://scan/#Intent;scheme=GCash;package=com.globe.gcash.android;end"> Take1 a QR code </a>
-          <a href="intent://scan/#Intent;scheme=globe.gcash;package=com.globe.gcash.android;end"> Take2 a QR code </a>
-          <a href="intent://scan/#Intent;scheme=globetel.gcash;package=com.globe.gcash.android;end"> Take2 a QR code </a>
-          <a href="intent://scan/#Intent;scheme=com.globetel.gcash;package=com.globe.gcash.android;end"> Take2 a QR code </a>
+          <a href="intent://scan/#Intent;package=com.globe.gcash.android;end"> Take1 a QR code </a>
+          <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end"> Take2 a QR code </a>
+          <a href="intent://scan/#Intent;scheme=com.globe.gcash;package=com.globe.gcash.android;end"> Take2 a QR code </a>
           <!-- <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"> Take3 a QR code </a> -->
           <!-- <input type="button" value="Open App2" onclick="openApp2()" /> --> 
           <!-- <input type="button" value="Open App3" onclick="openApp3()" /> --> 
