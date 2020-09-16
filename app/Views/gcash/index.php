@@ -67,6 +67,8 @@
 
           <input type="button" value="Open App1" onclick="openApp1()" />
           <input type="button" value="Open App2" onclick="openApp2()" />
+          <input type="button" value="Open App3" onclick="openApp3()" />
+          <input type="button" value="Open App4" onclick="openApp4()" />
         </div>
       </div>
       <br><br>

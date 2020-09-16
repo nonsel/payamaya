@@ -31,3 +31,11 @@ function openApp1(){
 function openApp2(){
   window.open('android-app://com.globe.gcash.android',"_self");
 }
+
+function openApp3(){
+  window.open('com.globetel.gcash://',"_self");
+}
+
+function openApp4(){
+  window.open('gcash://',"_self");
+}
