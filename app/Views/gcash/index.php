@@ -65,8 +65,17 @@
             </div>
           </form>
 
-          <form action="adyencheckout://com.globe.gcash.android" target="_blank">
-            <input type="submit" value="Open App" />
+          <form action="com.globetel.gcash://" target="_blank">
+            <input type="submit" value="Open App1" />
+          </form>
+          <form action="gcash://" target="_blank">
+            <input type="submit" value="Open App2" />
+          </form>
+          <form action="gcash://home" target="_blank">
+            <input type="submit" value="Open App3" />
+          </form>
+          <form action="com.globetel.gcash://home" target="_blank">
+            <input type="submit" value="Open App4" />
           </form>
         </div>
       </div>
