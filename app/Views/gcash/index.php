@@ -65,17 +65,14 @@
             </div>
           </form>
 
-          <form action="com.globetel.gcash://" target="_blank">
+          <form action="com.globetel.gcash://com.globe.gcash.android">
             <input type="submit" value="Open App1" />
           </form>
-          <form action="gcash://" target="_blank">
+          <form action="gcash://com.globe.gcash.android">
             <input type="submit" value="Open App2" />
           </form>
-          <form action="gcash://home" target="_blank">
+          <form action="android-app://com.globe.gcash.android">
             <input type="submit" value="Open App3" />
-          </form>
-          <form action="com.globetel.gcash://home" target="_blank">
-            <input type="submit" value="Open App4" />
           </form>
         </div>
       </div>
