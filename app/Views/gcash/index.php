@@ -65,15 +65,16 @@
             </div>
           </form>
           
-          <a href="intent://scan/#Intent;scheme=gcash;package=com.globe.gcash.android;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.globe.gcash.android&hl=en;end"> 
+<!--           <a href="intent://scan/#Intent;scheme=gcash;package=com.globe.gcash.android;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.globe.gcash.android&hl=en;end"> 
             <input type="button" value="Open App1"/>
           </a>
 
           <a href="intent://stackoverflow.com/questions/29250152/what-is-the-intent-to-launch-any-website-link-in-google-chrome#Intent;scheme=http;action=android.intent.action.VIEW;end;">
             <input type="button" value="Open App2"/>
-          </a>
-
-          <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"> Take a QR code </a>
+          </a> -->
+          <a href="intent://scan/#Intent;scheme=gcash;package=com.globe.gcash.android;end"> Take1 a QR code </a>
+          <a href="intent://scan/#Intent;scheme=Gcash;package=com.globe.gcash.android;end"> Take2 a QR code </a>
+          <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end"> Take3 a QR code </a>
           <!-- <input type="button" value="Open App2" onclick="openApp2()" /> --> 
           <!-- <input type="button" value="Open App3" onclick="openApp3()" /> --> 
           <!-- <input type="button" value="Open App4" onclick="openApp4()" /> -->
