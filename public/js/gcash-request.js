@@ -16,7 +16,7 @@ function generateLink(valid){
     dataType: 'json',
     data: $("#PaymentForm").serialize(),
     success: function(response){
-      window.location.href = 'intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end';
+      window.location.href = 'intent://scan/#Intent;scheme=https;package=com.globe.gcash.android;end';
     },
     error: function(){
       $(".btn-submit").prop("disabled",false);
