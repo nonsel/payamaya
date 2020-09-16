@@ -65,7 +65,7 @@
             </div>
           </form>
           
-          <a href="intent://scan/#Intent;scheme=clashofclans;package=com.supercell.clashofclans;S.browser_fallback_url=https://play.google.com/store/apps/details/id/com.supercell.clashofclans&amp;&referrer=kinlan;end"> 
+          <a href="intent://scan/#Intent;scheme=gcash;package=com.globe.gcash.android;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.globe.gcash.android&hl=en;end"> 
             <input type="button" value="Open App1"/>
           </a>
           <!-- <input type="button" value="Open App2" onclick="openApp2()" /> --> 
