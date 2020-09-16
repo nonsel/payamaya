@@ -16,7 +16,7 @@ function generateLink(valid){
     dataType: 'json',
     data: $("#PaymentForm").serialize(),
     success: function(response){
-      window.location.href = 'com.globetel.gcash://';
+      openApp()
     },
     error: function(){
       $(".btn-submit").prop("disabled",false);
@@ -24,18 +24,6 @@ function generateLink(valid){
   });
 }
 
-function openApp1(){
-  window.location = 'market://details?id=com.globe.gcash.android'
-}
-
-function openApp2(){
-  window.open('android-app://com.globe.gcash.android',"_self");
-}
-
-function openApp3(){
-  window.open('com.globetel.gcash://',"_self");
-}
-
-function openApp4(){
-  window.open('intent://scan/#Intent;scheme=clashofclans;package=com.supercell.clashofclans;S.browser_fallback_url=https://play.google.com/store/apps/details/id/com.supercell.clashofclans&amp;%26referrer%3Dkinlan;end',"_self");
+function openApp(){
+  window.open('intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end',"_self");
 }
