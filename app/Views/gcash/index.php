@@ -23,15 +23,22 @@
           </div>
         </div>
         <div class="mb-5" style="font-size: 23px">
-          <div>Recipient Name: <b>Allan Sy Anngala</b></div>
-          <div>Gcash Number: <b>09178485200</b></div>
+          <div class="row">
+            <div class="col-md-6 text-center text-lg-right text-md-right">Recipient Name:</div>
+            <div class="col-md-6 text-center text-lg-left text-md-left"><b>Allan Sy Anngala</b></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 text-center text-lg-right text-md-right">Gcash Number:</div>
+            <div class="col-md-6 text-center text-lg-left text-md-left"><b>09178485200</b></div>
+          </div>
         </div>
       </div>
 
       <hr>
       <div class="row d-flex justify-content-center">
         <div class="col-md-7 order-md-1">
-          <form id="PaymentForm" class="needs-validation" novalidate="">
+<!--           <form id="PaymentForm" class="needs-validation" novalidate="">
 						<div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -58,14 +65,17 @@
               </div>
             </div>
 
-            <!-- <hr class="mb-4"> -->
             <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end">
               <button class="btn btn-primary btn-lg btn-block btn-submit" type="button">Click to Open GCash App</button>
             </a>
             <div class="text-center mt-4">
               <a href="<?= base_url('/') ?>">Select another payment method</a>
             </div>
-          </form>
+          </form> -->
+          <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end">
+            <button class="btn btn-primary btn-lg btn-block btn-submit" type="button">Click to Open GCash App</button>
+          </a>
+          <div class="mt-2 text-center text-info"><i class="fas fa-info-circle"></i> Currently supports android only</div>
         </div>
       </div>
       <br><br>
