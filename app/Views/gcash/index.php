@@ -25,12 +25,17 @@
         <div class="mb-5" style="font-size: 23px">
           <div class="row">
             <div class="col-md-6 text-center text-lg-right text-md-right">Recipient Name:</div>
-            <div class="col-md-6 text-center text-lg-left text-md-left"><b>Allan Sy Anngala</b></div>
+            <div class="col-md-6 text-center text-lg-left text-md-left"><b>Linden Teak (Allan A.)</b></div>
           </div>
 
           <div class="row">
             <div class="col-md-6 text-center text-lg-right text-md-right">Gcash Number:</div>
-            <div class="col-md-6 text-center text-lg-left text-md-left"><b>09178485200</b></div>
+            <div class="col-md-6 text-center text-lg-left text-md-left">
+              <b>09178485200</b>
+            </div>
+          </div>
+          <div class="text-center">
+            <small style="font-size: 13px;color: #797171;">Copy the Gcash number before you proceed</small>
           </div>
         </div>
       </div>
