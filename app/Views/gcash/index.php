@@ -15,72 +15,21 @@
 
     <div class="container pt-5">
       <div class="text-center">
-        <img class="d-block mx-auto" src="<?= base_url('image/gcash-logo.png') ?>" alt="">
+        <img class="d-block mx-auto mb-5" src="<?= base_url('image/gcash-logo.png') ?>" alt="">
 
-        <div class="mt-5 mb-5 text-center">
-          <div style="color: #0075ff; border: solid 1px #0075ff; padding: 5px 10px; max-width: 600px; margin: auto; font-size: 18px">
-            <i class="fas fa-check-circle"></i> CHECK THE RECIPIENT NAME BEFORE YOU TAP "CONFIRM"
-          </div>
-        </div>
         <div class="mb-5" style="font-size: 23px">
-          <div class="row">
-            <div class="col-md-6 text-center text-lg-right text-md-right">Recipient Name:</div>
-            <div class="col-md-6 text-center text-lg-left text-md-left"><b>Linden Teak (Allan A.)</b></div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 text-center text-lg-right text-md-right">Gcash Number:</div>
-            <div class="col-md-6 text-center text-lg-left text-md-left">
-              <b>09178485200</b>
-            </div>
-          </div>
-          <div class="text-center">
-            <small style="font-size: 13px;color: #797171;">Copy the Gcash number before you proceed</small>
-          </div>
+          <img class="d-block mx-auto" src="<?= base_url('image/gcash-qr-code.png') ?>" style="max-height: 600px;">
         </div>
       </div>
 
       <hr>
       <div class="row d-flex justify-content-center">
         <div class="col-md-7 order-md-1">
-<!--           <form id="PaymentForm" class="needs-validation" novalidate="">
-						<div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="fname" placeholder="" name="firstname" required>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lname" placeholder="" name="lastname" required="">
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="address2">Email Address</label>
-              <input type="email" class="form-control" id="email-address" name="email-address" required>
-              <div class="invalid-feedback">
-                Email Address is required.
-              </div>
-            </div>
-
-            <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end">
-              <button class="btn btn-primary btn-lg btn-block btn-submit" type="button">Click to Open GCash App</button>
+          <div class="mt-2 text-center text-info">
+            <a href="<?= base_url('gcash/how-to-pay') ?>">
+              <i class="fas fa-info-circle"></i> How to pay using gcash QR code
             </a>
-            <div class="text-center mt-4">
-              <a href="<?= base_url('/') ?>">Select another payment method</a>
-            </div>
-          </form> -->
-          <a href="intent://scan/#Intent;scheme=com.globe.gcash.android;package=com.globe.gcash.android;end">
-            <button class="btn btn-primary btn-lg btn-block btn-submit" type="button">Click to Open GCash App</button>
-          </a>
-          <div class="mt-2 text-center text-info"><i class="fas fa-info-circle"></i> Currently supports android only</div>
+          </div>
         </div>
       </div>
       <br><br>

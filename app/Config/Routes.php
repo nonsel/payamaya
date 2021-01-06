@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Main::index');
 $routes->get('/privacy-policy', 'Privacy::index');
 $routes->get('/payment/(:any)', 'Paymaya::payment/:ref_number');
+$routes->get('/gcash/how-to-pay', 'Gcash::how_to');
 $routes->get('/api/paymaya/webhook', 'Paymaya::webhook');
 /**
  * --------------------------------------------------------------------

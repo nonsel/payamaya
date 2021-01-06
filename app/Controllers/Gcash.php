@@ -6,6 +6,10 @@ class Gcash extends BaseController
 		return view('gcash/index');
 	}
 
+	public function how_to(){
+		return view('gcash/how-to-pay');
+	}
+
 	public function request_payment(){
 		$request = service('request');
 
