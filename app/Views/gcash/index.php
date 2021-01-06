@@ -18,7 +18,7 @@
         <img class="d-block mx-auto mb-5" src="<?= base_url('image/gcash-logo.png') ?>" alt="">
 
         <div class="mb-5" style="font-size: 23px">
-          <img class="d-block mx-auto" src="<?= base_url('image/gcash-qr-code.png') ?>" style="max-height: 600px;">
+          <img class="d-block mx-auto" src="<?= base_url('image/gcash-qr-code.png') ?>" style="max-height: 600px; width: 100%">
         </div>
       </div>
 
